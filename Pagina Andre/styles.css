@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pinyon+Script&family=Satisfy&display=swap');
 
 body{
+  height: 100vh;
   background-color: #F5EEDD;
   margin: 0px;    
 }
@@ -8,6 +9,9 @@ body{
   margin-left: 0px;
   height: 50px;
   width: 50px;
+}
+header{
+  border-bottom: solid #7AE2CF 1px;
 }
 #nombre{
   font-family: "Pinyon Script", cursive;
@@ -34,6 +38,20 @@ body{
   width: 100%;
   height: 100%;
 }
+#boton_plegable{
+  display: none;
+  background-color: #F5EEDD;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: solid #06202B 0.5px;
+  font-size: x-large;
+  text-align: center;
+  justify-content: center;
+  color: #06202B;
+  margin: 10px;
+}
 #inicio{
   display: flex;
   flex-direction: row;
@@ -47,46 +65,95 @@ body{
 }
 .gallery {
   display: flex;
-  flex-wrap: nowrap; 
-  justify-content: space-around; 
+  flex-wrap: wrap; 
+  justify-content: space-around;
 }
 #intro{
-  position: relative;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  height: 40vh;
+  width: 100%;
+}
+#boton_contacto{
+  font-family: "Lato", cursive;
+  font-weight: 400;
+  font-size: larger;
+  align-self: center;
+  height: 20px;
+  width: 150px;
+  border-radius: 20px;
+  color:#06202B ;
+  background-color: #7AE2CF;
+  border: none;
+  margin: 10px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#segunda_fila{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 50vh;
+}
+#imgIntro, #imgSoy{
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+.imgPer {
+  height: 200px;
+  width: 174px;
+  border-radius: 100%;
   background-color: #077A7D;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
 }
-.imgPer, .imgConoce{
+.imgConoce{
   box-sizing: border-box;
-  width: 35%;
-  margin: 0px;
-  align-self: flex-end;
+  height: 100px;
+  width: 87px;
+  align-self: center;
+  border-radius: 100%;
+  background-color: #077A7D;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
 
-}
 .pres{
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
   text-align: center;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 #frase{
   font-family: "Satisfy", cursive;
-  font-weight: 500;
-  font-size: 45px;
-  color: #7AE2CF;
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 35px);
+  color: #06202B;
+  margin: 10px;
+  align-self: center;
+  text-align: center;
+  flex-grow: 2;
+  flex-shrink: 1;
+  align-content: center;
 }
 #eslogan{
   font-family: "Lato", cursive;
-  font-weight: 500;
-  font-size: 30px;
-  color: #7AE2CF;
-
+  font-weight: 400;
+  font-size: clamp(15px, 3vw, 20px);
+  color: #06202B;
+  margin: 10px;
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-content: center;
+  align-self: center;
 }
 .textoConoce{
   display: flex;
@@ -96,36 +163,92 @@ body{
   color: #06202B;
   margin: 0px;
   padding: 20px;
-}
-.textoConoce h1{
-  font-family: "Pinyon Script", cursive;
-  font-weight: 500;
-  font-size: 45px;
-  color: #06202B;
-  margin: 0px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 .textoConoce h2{
   font-family: "Lato", cursive;
   font-weight: 500;
-  font-size: 20px;
+  font-size: clamp(10px, 1.5vw, 20px);
   color: #06202B;
   margin: 0px;
   text-align: justify;
 }
-#conoceme{
-  position: relative;
+#servicios{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  transition: height, width 0.5s ease; 
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+#galeria_servicios{
+  display: flex;
   flex-direction: row;
+  font-family: Lato, cursive;
+  text-align: center;
+  align-items: baseline;
+  width: 100%;
+  flex-grow: 2;
+  flex-shrink: 1;
+}
+#terapia_ind, #terapia_par, #terapia_fam{
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+.imgServicio{
+  width: 100%;
+  border-radius: 10px;
+}
+#conoceme{
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
   font-family: "Lato", cursive;
   text-align: center;
-  background-color: #7ae2cf;
-  background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
   align-items: center;
   box-sizing: border-box;
-
-
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+} 
+#titulo_servicio{
+  font-family: "Pinyon Script", cursive;
+  font-weight: 500;
+  font-size: clamp(15px, 3vw, 30px);
+  justify-items: center;
+  text-align: center;
+  background-color: #F5EEDD;
+  color: #06202B;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#titulo_soy{
+  font-family: "Pinyon Script", cursive;
+  font-weight: 500;
+  font-size: clamp(15px, 3vw, 30px);
+  color: #06202B;
+  margin: 0px;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 #texto_presentacion{
+  display: flex;
+  flex-direction: row;
   justify-self: auto;
+  flex-grow: 5;
+  flex-basis: 0;
+  flex-shrink: 1;
 }
 nav {
   display: flex;
@@ -133,7 +256,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   background-color: #F5EEDD;
-  height: 60px;
+  height: 10vh;
   width: 100%;
   color: #06202B;
 }
@@ -158,84 +281,73 @@ nav a {
   height: 60px;
   align-content: center;
 }
-.entrada-izq{
-  animation: left-load 1s forwards ;
+
+
+@media(max-width:768px){
+  #boton_plegable{
+    display: block;
+  }
+  #botones{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #F5EEDD;
+    top: 10vh;
+    width: 100%;
+    text-align: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+  #botones.activo{
+    display: flex;
+    justify-content: flex-start;
+    top: 11vh;
+  }
 }
-.entrada-der{
-  animation:right-load 1s forwards ;
-}
-.salida-izq{
-  animation: left-exit 1s forwards;
-}
-.salida-der{
-  animation: right-exit 1s forwards;
+.animacion-activo{
+  height: 90vh;
+  width: 100vw;
 }
 
-@keyframes right-exit {
+.ocultar{
+  animation: ocultar 0.5s ease;
+}
+
+@keyframes up {
   0% {
-    right: 0;
-    opacity: 1;
-    display: flex;
-    height: 100%;
-    width: 100%;
+    height: altoSeccionInicio;
+    width: anchoSeccionInicio;  
   }
 
   100% {
-    right: -100%;
-    opacity: 0;
-    display: none;
-    height: 0;
-    width: 0;
+    height: 90vh;
+    width: 100vw;
   }
 }
-@keyframes right-load {
+@keyframes down {
   0% {
-    right: -100%;
-    opacity: 0;
-    display: none;
-    height: 0;
-    width: 0;
+    height: 90vh;
+    width: 100vw;
   }
 
   100% {
-    right: 0;
-    opacity: 1;
-    display: flex;
-    height: 100%;
-    width: 100%;
+    height: altoSeccionInicio;
+    width: anchoSeccionInicio;
   }
 }
-@keyframes left-load {
+@keyframes ocultar {
   0% {
-    left: -100%;
-    opacity: 0;
-    display: none;
-    height: 0;
-    width: 0;
+    display: flex;
+    opacity: 1;
+    flex-grow: 1;
   }
 
   100% {
-    left: 0;
-    opacity: 1;
-    display: flex;
-    height: 100%;
-    width: 100%;
-  }
-}
-@keyframes left-exit {
-  0% {
-    left: 0;
-    opacity: 1;
-    display: flex;
-    height: 100%;
-    width: 100%;
-  }
-
-  100% {
-    left: -100%;
-    opacity: 0;
     display: none;
-    height: 0;
-    width: 0;
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    flex-grow: 0;
   }
 }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mg.Andrea Ospina</title>
+        <link rel="icon" href="./assets/Logo Andre.png">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul id="inicio">
+                    <img src = "./assets/Logo Andre.png" class="logo">
+                    <li><a href="intro" id="nombre">Andrea Ospina</a></li>
+                </ul>
+                <ul id="botones">
+                    <li ><a href="#intro" id="link_inicio" onclick="cambiarSeccion()" >Inicio</a></li>
+                    <li ><a href="#servicios" id="link_orientaciones" onclick="cambiarSeccion()" >Orientaciones</a></li>
+                    <li ><a href="#conoceme" id="link_conoceme" onclick="cambiarSeccion()">Conóceme</a></li>
+                    <li><a href="https://wa.me/+573115729863" rel="noopener noreferrer">Agendar cita</a></li>
+                </ul>
+                <button id="boton_plegable">&#9776</button>
+            </nav>
+        </header>
+        <section class="gallery">
+            <div id="intro">
+                <div id="imgIntro">
+                    <img src = "./assets/Andre.PNG" class="imgPer">
+                </div>
+                <section class="pres">
+                    <h1 id="frase">Transformar el dolor en fuerza y la confusión en claridad.</h1>
+                    <h2 id="eslogan">Acompañamiento psicológico para sanar, crecer y elegirte.</h2>
+                    <button id="boton_contacto">Escríbreme</button>
+                </section>
+            </div>
+            <section id="segunda_fila">
+                <div id="servicios">
+                    <div id="titulo_servicio">
+                        <h1 >Orientaciones</h1>
+                    </div>
+                    <section id="galeria_servicios">
+                        <section id="terapia_ind">
+                            <h1>Terapia indivudual</h1>
+                            <img src="./assets/Terapia individual.png" class="imgServicio">
+                        </section>
+                        <section id="terapia_par">
+                            <h1>Terapia de parejas</h1>
+                            <img src="./assets/Terapia parejas.svg" class="imgServicio">
+                        </section>
+                        <section id="terapia_fam">
+                            <h1>Terapia familiar</h1>
+                            <img src="./assets/Terapia Fam.svg" class="imgServicio">
+                        </section>                  
+                    </section>
+                </div>
+                <div id="conoceme"  >
+                    <div id="titulo_soy">
+                        <h1 id="titulo_conoceme">¿Quién soy?</h1>
+                    </div>
+                    <div id="texto_presentacion">
+                        <section class="textoConoce">
+                            <h2 id="texto_conoceme">Soy Andrea Ospina, psicóloga con 13 años de experiencia en diferentes áreas de la psicología. Me especializo en acompañar a las personas a sanar sus heridas emocionales, encontrar su propósito y vivir una vida plena.</h2>
+                        </section>
+                        <div id="imgSoy">
+                            <img src = "./assets/Andre.PNG" class="imgConoce">
+                        </div>
+                    </div>                
+                </div>
+            </section>
+        </section>
+                
+        <script src="./js/Script.js" defer></script>        
+    </body>
+</html>
